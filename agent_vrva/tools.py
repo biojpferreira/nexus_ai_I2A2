@@ -7,7 +7,6 @@ from sqlalchemy import create_engine, select,desc, func
 from sqlalchemy.orm import Session
 from typing import Type, ClassVar
 
-sys.path.insert(1, '/home/jferreira/devcry/nexusai/agent_vrva/')
 from migrations import *
 
 
