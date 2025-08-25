@@ -8,7 +8,7 @@ from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from tabulate import tabulate
 
-from tools import VRVAAutomationTools
+from tools import *
 import config
 
 
@@ -38,10 +38,9 @@ class VRAgent:
         # --- Tool List ---
         vrva_tools_instance = VRVAAutomationTools()
         tools_list = [
-            vrva_tools_instance.consolidate_and_clean_data,
-            vrva_tools_instance.read_file
+            vrva_tools_instance.calcular_vr,
+            ProcessarTodosFuncionariosTool()
         ]
-        print(tools_list)
 
         # --- Agent Prompt (using ChatPromptTemplate) ---
         agent_prompt = ChatPromptTemplate.from_messages(
